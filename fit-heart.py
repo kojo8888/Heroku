@@ -27,7 +27,7 @@ def cost_function(params, heart, kd_tree):
 
 def run_optimization():
     # Use a relative path to your GeoJSON file (ensure it's included in your repo)
-    gdf = gpd.read_file("../public/bavaria_bike_nodes.geojson")
+    gdf = gpd.read_file("public/bavaria_bike_nodes.geojson")
     coords = np.array([(point.x, point.y) for point in gdf.geometry])
     kd_tree = KDTree(coords)
     heart = generate_heart(num_points=200)
